@@ -12,6 +12,9 @@ func main() {
 	test("Lane,", " happy birthday!")
 	test("Zuck,", " hope that Metaverse thing works out")
 	test("Go", " is fantastic")
+	a:=getMonthlyPrice("basic")
+	fmt.Println(a)
+
 }
 
 func test(s1 string, s2 string) {
