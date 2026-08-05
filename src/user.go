@@ -15,8 +15,19 @@ func main() {
 	a:=getMonthlyPrice("basic")
 	fmt.Println(a)
 
+	
+
+	
+
 }
 
 func test(s1 string, s2 string) {
 	fmt.Println(concat(s1, s2))
+	testies(true, true)
+	testies(false, true)
+	testies(true, false)
+	testies(false, false)
 }
+
+
+
