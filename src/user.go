@@ -12,8 +12,6 @@ func main() {
 	test("Lane,", " happy birthday!")
 	test("Zuck,", " hope that Metaverse thing works out")
 	test("Go", " is fantastic")
-	a:=getMonthlyPrice("basic")
-	fmt.Println(a)
 
 	
 
@@ -25,8 +23,9 @@ func test(s1 string, s2 string) {
 	fmt.Println(concat(s1, s2))
 	testies(true, true)
 	testies(false, true)
-	testies(true, false)
-	testies(false, false)
+	fmt.Println("--------")
+	fmt.Println(placeOrder("1", 5, 10.00))
+	fmt.Println(getMonthlyPrice("basic"))
 }
 
 
