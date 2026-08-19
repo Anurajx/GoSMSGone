@@ -26,6 +26,18 @@ func concat(s1 string, s2 string) string {
 
 // }
 
+func main() {
+	e := email{
+		isSubscribed: true,
+		body:         "Whoa there!",
+		toAddress:    "soldier@monty.com",
+	}
+
+	fmt.Println(getExpenseReport(e))
+	finalString:=getSMSErrorString(5, "is this correct? it is")
+	fmt.Print(finalString)
+}
+
 func test(s1 string, s2 string) {
 	fmt.Println(concat(s1, s2))
 	testies(true, true)

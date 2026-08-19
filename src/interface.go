@@ -137,12 +137,3 @@ type sendingReport struct {
 func (sr sendingReport) getMessage() string {
 	return fmt.Sprintf(`Your "%s" report is ready. You've sent %v messages.`, sr.reportName, sr.numberOfSends)
 }
-func main() {
-	e := email{
-		isSubscribed: true,
-		body:         "Whoa there!",
-		toAddress:    "soldier@monty.com",
-	}
-
-	fmt.Println(getExpenseReport(e))
-}
