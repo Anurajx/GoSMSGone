@@ -35,7 +35,8 @@ func main() {
 
 	fmt.Println(getExpenseReport(e))
 	finalString:=getSMSErrorString(5, "is this correct? it is")
-	fmt.Print(finalString)
+	fmt.Println(finalString)
+	fmt.Println(divide(12,0))
 }
 
 func test(s1 string, s2 string) {
