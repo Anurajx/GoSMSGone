@@ -37,6 +37,7 @@ func main() {
 	finalString:=getSMSErrorString(5, "is this correct? it is")
 	fmt.Println(finalString)
 	fmt.Println(divide(12,0))
+	fizzbuzz()
 }
 
 func test(s1 string, s2 string) {
