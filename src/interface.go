@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -97,6 +98,10 @@ type sms struct {
 	isSubscribed  bool
 	body          string
 	toPhoneNumber string
+	
+	id      string
+	content string
+	tags    []string
 }
 
 
@@ -136,4 +141,37 @@ type sendingReport struct {
 
 func (sr sendingReport) getMessage() string {
 	return fmt.Sprintf(`Your "%s" report is ready. You've sent %v messages.`, sr.reportName, sr.numberOfSends)
+}
+
+
+
+//Tag Message
+func tagMessages(messages []sms, tagger func(sms) []string) []sms {
+	// ?
+	// messagesWithTags := []sms{}
+	for i, msg := range messages {
+		msg.tags = tagger(msg)
+		messages[i] = msg
+
+	}
+	return messages
+}
+
+func tagger(msg sms) []string {
+	tags := []string{}
+	msg.content = strings.ToLower(msg.content)
+
+	if strings.Contains(msg.content, "urgent") {
+		tags = append(tags, "Urgent")
+	}
+	if strings.Contains(msg.content, "sale") {
+		tags = append(tags, "Promo")
+	}
+	if strings.Contains(msg.content, "important") {
+		tags = append(tags, "Important")
+	}
+	
+
+	return tags
+	// ?
 }
