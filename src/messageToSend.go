@@ -12,8 +12,9 @@ type sender struct {
 }
 
 type user struct {
-	name   string
-	number int
+	name                 string
+	number               int
+	scheduledForDeletion bool
 }
 
 func canSendMessage(mToSend messageToSend) bool {
