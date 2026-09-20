@@ -92,6 +92,8 @@ type email struct {
 	isSubscribed bool
 	body         string
 	toAddress	string
+	message     string
+	fromAddress string
 }
 
 type sms struct {
