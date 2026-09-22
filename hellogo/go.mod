@@ -1,3 +1,3 @@
-module github.com/Anurajx/hellogo
+module github.com/Anurajx/goSMSGone
 
 go 1.24.0

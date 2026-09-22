@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Anurajx/mystrings"
+	"github.com/Anurajx/GoSMSGone/mystrings"
 )
 
 func main() {
