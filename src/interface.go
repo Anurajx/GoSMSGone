@@ -94,6 +94,7 @@ type email struct {
 	toAddress	string
 	message     string
 	fromAddress string
+	date time.Time
 }
 
 type sms struct {
