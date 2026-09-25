@@ -69,3 +69,53 @@ func getDBsChannel(numDBs int) (chan struct{}, *int) {
 
 	return ch, &count
 }
+
+
+//Closing channels 
+func countReports(numSentCh chan int) int {
+	iter := 0
+	for {
+		_, ok := <- numSentCh
+		if !ok {
+			break
+		}
+		iter++
+	}
+	return iter
+	// ?
+}
+
+// don't touch below this line
+
+func sendReports(numBatches int, ch chan int) {
+	for i := 0; i < numBatches; i++ {
+		numReports := i*23 + 32%17
+		ch <- numReports
+	}
+	close(ch)
+}
+
+//Concurrent Fibonacci
+
+func concurrentFib(n int) []int {
+	// ?
+	ch := make(chan int)
+	result := []int{}
+	go fibonacci(n,ch)
+	for val := range ch {
+		result = append(result, val)
+
+	}
+	return result
+}
+
+// don't touch below this line
+
+func fibonacci(n int, ch chan int) {
+	x, y := 0, 1
+	for i := 0; i < n; i++ {
+		ch <- x
+		x, y = y, x+y
+	}
+	close(ch)
+}
