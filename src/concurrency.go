@@ -71,7 +71,7 @@ func getDBsChannel(numDBs int) (chan struct{}, *int) {
 }
 
 
-//Closing channels 
+//Closing channels ------------------
 func countReports(numSentCh chan int) int {
 	iter := 0
 	for {
@@ -95,7 +95,7 @@ func sendReports(numBatches int, ch chan int) {
 	close(ch)
 }
 
-//Concurrent Fibonacci
+//Concurrent Fibonacci-----------
 
 func concurrentFib(n int) []int {
 	// ?
