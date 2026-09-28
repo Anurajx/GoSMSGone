@@ -13,6 +13,7 @@ func saveBackups(snapshotTicker, saveAfter <-chan time.Time, logChan chan string
 		case <- saveAfter:
 			saveSnapshot(logChan)
 			return
+			
 		default:
 			waitForData(logChan)
 			time.Sleep(500* time.Millisecond)
