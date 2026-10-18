@@ -4,10 +4,10 @@ import (
 	"errors"
 )
 
-type customer struct {
-	id      int
-	balance float64
-}
+// type customer struct {
+// 	id      int
+// 	balance float64
+// }
 
 type transactionType string
 
@@ -24,7 +24,6 @@ type transaction struct {
 
 // Don't touch above this line
 
-
 func (c *customer) updateBalance(t transaction) error {
 	if t.transactionType != transactionDeposit && t.transactionType != transactionWithdrawal {
 		return errors.New("unknown transaction type")
@@ -33,7 +32,7 @@ func (c *customer) updateBalance(t transaction) error {
 	if c.balance < t.amount && t.transactionType == transactionWithdrawal {
 		return errors.New("insufficient funds")
 	}
-	
+
 	if t.transactionType == transactionDeposit {
 		c.balance += t.amount
 	} else {
@@ -41,4 +40,5 @@ func (c *customer) updateBalance(t transaction) error {
 	}
 	return nil
 }
+
 // ?
