@@ -71,3 +71,23 @@ func (otup oneTimeUsagePlan) GetCost() float64 {
 	const costPerEmail = 0.03
 	return float64(otup.numEmailsAllowed) * costPerEmail
 }
+
+// GenericStructs
+type Envelope[T any] struct {
+	recipient string
+	payload   T
+}
+
+func createEnvelopes[T any](recipients []string, payload T) []Envelope[T] {
+	if len(recipients) == 0 {
+		return []Envelope[T]{}
+	}
+	ans := make([]Envelope[T], 0, len(recipients))
+	for _, recipient := range recipients {
+		ans = append(ans, Envelope[T]{
+			recipient: recipient,
+			payload:   payload,
+		})
+	}
+	return ans
+}

@@ -1,8 +1,8 @@
 package main
 
-import (
-	"errors"
-)
+// import (
+// 	"errors"
+// )
 
 // type customer struct {
 // 	id      int
@@ -41,4 +41,4 @@ func (c *customer) updateBalance(t transaction) error {
 	return nil
 }
 
-// ?
+?
